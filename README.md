@@ -1,6 +1,3 @@
-
-# ABRSQOL
-
 # Toolking for measuring quality of life under spatial frictions
 (c) Gabriel M. Ahlfeldt, Fabian Bald, Duncan Roth, Tobias Seidel
 
