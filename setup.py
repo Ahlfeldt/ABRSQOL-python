@@ -27,9 +27,10 @@ setup(
         'ci': extra_ci,
     },
     entry_points={
-        # 'console_scripts': [
-        #     'add=my_pip_package.math:cmd_add',
-        # ],
+        'console_scripts': [
+            'ABRSQOL_testdata=ABRSQOL:testdata',
+            'ABRSQOL_invert_quality_of_life=ABRSQOL:invert_quality_of_life',
+        ],
     },
     classifiers=[
 
