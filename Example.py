@@ -13,6 +13,8 @@
 
 
 import ABRSQOL
+# alternatively you can import the function invert_quality_of_life and the test data direclty via:
+# from ABRSQOL import invert_quality_of_life, testdata
 from pandas import read_csv
 import os
 
