@@ -25,7 +25,7 @@ When using this toolkit in your work, please cite Gabriel M. Ahlfeldt, Fabian Ba
 To install the Python package of the ABRSQOL-toolkit from github, run the following command in your python environment, run the following command in you anaconda shell. 
 
 ```console
-pip install "git+https://git@github.com/Ahlfeldt/ABRSQOL-toolkit.git#subdirectory=Python&egg=ABRSQOL"
+pip install ABRSQOL
 ```
 In case an error occurs at the installation (error: metadata-generation-failed), it is likely caused by incompatabile versions of setuptools and packaging. 
 This can be fixed by upgrading packaging to compatible versions:
