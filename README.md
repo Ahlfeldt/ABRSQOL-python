@@ -22,24 +22,28 @@ as the mean or median in the distribution of QoL across locations).
 When using this toolkit in your work, please cite Gabriel M. Ahlfeldt, Fabian Bald, Duncan Roth, Tobias Seidel (forthcoming): Measuring quality of life under spatial frictions
 
 ## Installation
-To install the Python package of the ABRSQOL-toolkit from github, run the following command in your python environment, run the following command in you anaconda shell. 
+To install the Python package of the ABRSQOL-toolkit, run the following command in your python environment in your terminal. 
 
 ```console
 pip install ABRSQOL
 ```
-In case an error occurs at the installation (error: metadata-generation-failed), it is likely caused by incompatabile versions of setuptools and packaging. 
-This can be fixed by upgrading packaging to compatible versions:
+Alternatively you can also install it from within your python script:
+```python
+import subprocess, sys
+subprocess.check_call([sys.executable, "-m", "pip", "install", 'ABRSQOL'])
+```
+In case an error occurs at the installation (error: metadata-generation-failed), it is likely caused by incompatabile versions of `setuptools` and `packaging`. 
+This can be fixed by upgrading `setuptools` and `packaging` to compatible versions:
 ```console
 pip install --upgrade setuptools>=74.1.1
 pip install --upgrade packaging>=22.0
 ```
-Or by downgrading setuptools:
+Or by downgrading `setuptools`:
 ```console
 pip install --upgrade setuptools==70.0.0
 ```
-Notice that you must also install 'git' available at https://git-scm.com/ for the installation to work.
 
-You may then load it by running:
+You may then load the package by running:
 ```python
 import ABRSQOL
 ```
@@ -106,4 +110,4 @@ my_dataframe['QoL'] = ABRSQOL.invert_quality_of_life(
 
 ## Ready-to-use script
 
-If you are new to Python, you may find it useful to execute the Example.py (or Example.ipynb) script saved in this folder. It will install the package, load the testing data set, generate a quality-of-life index, and save it to your working directory.  It should be straightforward to adapt the script to your data and preferred parameter values.
+If you are new to Python, you may find it useful to execute the `Example.py` (or `Example.ipynb`) script saved in this folder. It will install the package, load the testing data set, generate a quality-of-life index, and save it to your working directory.  It should be straightforward to adapt the script to your data and preferred parameter values.
