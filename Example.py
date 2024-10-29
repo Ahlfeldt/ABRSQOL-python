@@ -7,9 +7,11 @@
 
 # This is an example code that you can execute as an Python script
 
-# Install and run ABRSQOL-toolkit
 # install package into your environment through your console via
 # pip install ABRSQOL
+# or install it from this script:
+import subprocess, sys
+subprocess.check_call([sys.executable, "-m", "pip", "install", 'ABRSQOL'])
 
 
 import ABRSQOL
