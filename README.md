@@ -24,16 +24,20 @@ Alternatively you can also install it from within your python script:
 import subprocess, sys
 subprocess.check_call([sys.executable, "-m", "pip", "install", 'ABRSQOL'])
 ```
-In case an error occurs at the installation (error: metadata-generation-failed), it is likely caused by incompatabile versions of `setuptools` and `packaging`. 
-This can be fixed by upgrading `setuptools` and `packaging` to compatible versions:
-```console
-pip install --upgrade setuptools>=74.1.1
-pip install --upgrade packaging>=22.0
-```
-Or by downgrading `setuptools`:
-```console
-pip install --upgrade setuptools==70.0.0
-```
+<details>
+  <summary><i>In case an error occurs at the installation</i></summary>
+  In case an error occurs at the installation (error: metadata-generation-failed), it is likely caused by incompatabile versions of `setuptools` and `packaging`. 
+  This can be fixed by upgrading `setuptools` and `packaging` to compatible versions:
+  ```console
+  pip install --upgrade setuptools>=74.1.1
+  pip install --upgrade packaging>=22.0
+  ```
+  Or by downgrading `setuptools`:
+  ```console
+  pip install --upgrade setuptools==70.0.0
+  ```
+</details>
+
 
 You may then load the package by running:
 ```python
