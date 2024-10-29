@@ -39,20 +39,26 @@ pip install --upgrade setuptools==70.0.0
 </details>
 
 
+
+## Usage
 You may then load the package by running:
 ```python
 import ABRSQOL
 ```
+Or if you prefer alternatively import the function and testdata explicitly:
+```python
+from ABRSQOL import invert_quality_of_life, testdata
+```
 
-## Examples
-### Example 1: load testdata, run QoL inversion with default parameters, store result as 'QoL' variable, view result
+### Examples
+#### Example 1: load testdata, run QoL inversion with default parameters, store result as 'QoL' variable, view result
 ```python
 testdata = ABRSQOL.testdata
 testdata['QoL'] = ABRSQOL.invert_quality_of_life(df=testdata)
 testdata.head()
 ```
 
-### Example 2: load your data from csv, run inversion, save result as csv
+#### Example 2: load your data from csv, run inversion, save result as csv
 ```python
 my_dataframe = read.csv("path/to/your/csv_filename.csv")
 my_dataframe['quality_of_life'] = ABRSQOL.invert_quality_of_life(
@@ -79,7 +85,7 @@ from pandas import write_csv
 write_csv(my_dataframe, 'C:/FOLDER/my_data_with_qol.csv')
 ```
 
-### Example 3: Reference variables in your dataset by using the column index
+#### Example 3: Reference variables in your dataset by using the column index
 ```python
 my_dataframe['QoL'] = ABRSQOL.invert_quality_of_life(
   df=my_dataframe,
@@ -92,7 +98,7 @@ my_dataframe['QoL'] = ABRSQOL.invert_quality_of_life(
 )
 ```
 
-### Example 4: Having named the variables in your data according to the default parameters, you can omit specifying variable names
+#### Example 4: Having named the variables in your data according to the default parameters, you can omit specifying variable names
 ```python
 my_dataframe['QoL'] = ABRSQOL.invert_quality_of_life(
   df=my_dataframe,
@@ -104,6 +110,6 @@ my_dataframe['QoL'] = ABRSQOL.invert_quality_of_life(
 )
 ```
 
-## Ready-to-use script
+### Ready-to-use script
 
 If you are new to Python, you may find it useful to execute the `Example.py` (or `Example.ipynb`) script saved in this folder. It will install the package, load the testing data set, generate a quality-of-life index, and save it to your working directory.  It should be straightforward to adapt the script to your data and preferred parameter values.
