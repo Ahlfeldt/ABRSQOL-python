@@ -3,7 +3,7 @@
 
 Version 1.0.1, 2024-10
 
-This repository contains the Python implementation of the [ARBSQOL-toolkit]("https://github.com/Ahlfeldt/ABRSQOL-toolkit").
+This repository contains the Python implementation of the [ARBSQOL-toolkit](https://github.com/Ahlfeldt/ABRSQOL-toolkit).
 
 **General instructions:**
 
