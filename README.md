@@ -26,7 +26,7 @@ subprocess.check_call([sys.executable, "-m", "pip", "install", 'ABRSQOL'])
 ```
 <details>
 <summary>In case an error occurs at the installation...</summary>
-<md-block>
+
 with an erorr message like 'metadata-generation-failed', it is likely caused by incompatabile versions of `setuptools` and `packaging`. 
 This can be fixed by upgrading `setuptools` and `packaging` to compatible versions:
 ```console
@@ -37,7 +37,7 @@ Or by downgrading `setuptools`:
 ```console
 pip install --upgrade setuptools==70.0.0
 ```
-</md-block>
+
 </details>
 
 
