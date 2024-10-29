@@ -1,5 +1,6 @@
 
 # ABRSQOL
+This repository contains the Python implementation of the [ARBSQOL-toolkit]("https://github.com/Ahlfeldt/ABRSQOL-toolkit").
 ## About
 This toolkit implements a numerical solution algorithm
 to invert a quality of life (QoL) from observed data
