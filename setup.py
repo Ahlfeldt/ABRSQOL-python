@@ -11,11 +11,11 @@ with open('./README.md', 'r') as f:
 
 setup(
     name=name,
-    version="1.0.1",
+    version="1.0.2",
     description='Numerical solution algorithm to invert a quality of life measure.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/Ahlfeldt/ABRSQOL-toolkit/blob/main/Python',
+    url='https://github.com/Ahlfeldt/ABRSQOL-toolkit-python',
     author='Gabriel M Ahlfeldt',
     author_email='g.ahlfeldt@hu-berlin.de',
     license='MIT',
