@@ -1,6 +1,8 @@
 # Python toolkit for measuring quality of life under spatial frictions
 (c) Gabriel M. Ahlfeldt, Fabian Bald, Duncan Roth, Tobias Seidel
+
 Version 1.0.2, 2024-10
+
 This repository contains the Python implementation of the [ARBSQOL-toolkit](https://github.com/Ahlfeldt/ABRSQOL-toolkit).
 
 ## About
