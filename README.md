@@ -115,3 +115,6 @@ my_dataframe['QoL'] = ABRSQOL.invert_quality_of_life(
 ### Ready-to-use script
 
 If you are new to Python, you may find it useful to execute the `Example.py` (or `Example.ipynb`) script saved in this folder. It will install the package, load the testing data set, generate a quality-of-life index, and save it to your working directory.  It should be straightforward to adapt the script to your data and preferred parameter values.
+
+## Acknowledgements
+The Python version of the toolkit was developed by [Max von Mylius](https://github.com/maximylius) based on the Stata and MATLAB functions.
