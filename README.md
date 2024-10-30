@@ -1,4 +1,4 @@
-# Toolking for measuring quality of life under spatial frictions
+# Python toolkit for measuring quality of life under spatial frictions
 (c) Gabriel M. Ahlfeldt, Fabian Bald, Duncan Roth, Tobias Seidel
 
 Version 1.0.1, 2024-10
