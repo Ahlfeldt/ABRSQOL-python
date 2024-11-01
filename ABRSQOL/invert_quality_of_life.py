@@ -1,26 +1,25 @@
-from numpy import exp, array, ones
+from numpy import (
+    exp as _np_exp, 
+    array as _np_array, 
+    ones as _np_ones
+  )
 
 def invert_quality_of_life(
-  df, # DataFrame or matrix containing dataset
-
-  # SPECIFY VARIABLES NAMES OR COLUMN INDEX
-  w = 'w', # 2: Wage index
-  p_H = 'p_H', # 3: Floor space price index
-  P_t = 'P_t', # 4: Tradable goods price index
-  p_n = 'p_n', # 5: Local services price index
-  L = 'L', # 6: Residence population
-  L_b = 'L_b', # 7: Hometown population
-
-  # DEFINE PARAMETER VALUES
-  alpha:float = 0.7, #income share on non-housing 1-alpha expenditure on housing (Source: Statistisches Bundesamt, 2020)
-  beta:float = 0.5, # share of alpha that is spent on tradable good
-  gamma:float = 3, # Own calculations
-  xi:float = 5.5, # Own calculations
-  # CONVERGENCE AND STOPPING PARAMETERS
-  conv:float = 0.5, # convergence parameter
-  tolerance:float = 1e-10, # Tolerance level for loop
-  maxiter:int = 10000
-)->array:
+  df,
+  w = 'w',
+  p_H = 'p_H',
+  P_t = 'P_t',
+  p_n = 'p_n',
+  L = 'L',
+  L_b = 'L_b',
+  alpha:float = 0.7,
+  beta:float = 0.5,
+  gamma:float = 3,
+  xi:float = 5.5,
+  conv:float = 0.5,
+  tolerance:float = 1e-10,
+  maxiter:int = 10000,
+)->_np_array:
     """ABRSQOL numerical solution algorithm to invert a quality of life measure
 
     This toolkit implements a numerical solution algorithm
@@ -73,14 +72,14 @@ def invert_quality_of_life(
         Maximum number of iterations after which the algorithm is forced to stop (default is 1e4)
     
     Returns:
-      vector (np.array): 
+      vector (numpy.array): 
         inverted quality of life measure (identified up to a constant). Shape=(n,1)
     """
     # Extract key variables from input dataframe/matrix
     # shape is JxTheta:
-    L_b = df[[L_b] if type(L_b) not in [list, array] else L_b].values
-    L = df[[L] if type(L) not in [list, array] else L].values
-    w = df[[w] if type(w) not in [list, array] else w].values
+    L_b = df[[L_b] if type(L_b) not in [list, _np_array] else L_b].values
+    L = df[[L] if type(L) not in [list, _np_array] else L].values
+    w = df[[w] if type(w) not in [list, _np_array] else w].values
     # shape is Jx1:
     P_t = df[[P_t]].values
     p_H = df[[p_H]].values
@@ -128,7 +127,7 @@ def invert_quality_of_life(
 
     # Relative Quality of life (A_hat)
     # Guess values relative QoL
-    A_hat = ones(shape=(J, Theta)) # First guess: all locations have the same QoL
+    A_hat = _np_ones(shape=(J, Theta)) # First guess: all locations have the same QoL
     A = A_hat
     
     O_vector_total = list() # list to track convergence
@@ -142,10 +141,10 @@ def invert_quality_of_life(
 
         # (1) Calculate model-consistent aggregation shares, Psi_b
         nom = (A * w / P) **(gamma)
-        Psi_b = ((exp(xi) - 1) * nom / nom.sum(axis=0) + 1)**-1
+        Psi_b = ((_np_exp(xi) - 1) * nom / nom.sum(axis=0) + 1)**-1
 
         # (2) Calculate mathcal_L
-        mathcal_L = ((L_b * Psi_b).sum(axis=0) + (L_b *Psi_b *(exp(xi) - 1)))
+        mathcal_L = ((L_b * Psi_b).sum(axis=0) + (L_b *Psi_b *(_np_exp(xi) - 1)))
         
         # (3) Calculate relative mathcal_L
         mathcal_L_hat = mathcal_L/mathcal_L[0]
