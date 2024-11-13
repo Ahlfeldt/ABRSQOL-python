@@ -70,7 +70,7 @@ def invert_quality_of_life(
       tolerance (float):
         Value used in stopping rule (The mean absolute error (MAE). Smaller values imply greater precision and longer convergence) (default is 1e-10)
       maxiter (int):
-        Maximum number of iterations after which the algorithm is forced to stop (default is 1e4)
+        Maximum number of iterations after which the algorithm is forced to stop (default is 10000)
     
     Returns:
       vector (np.array): 
